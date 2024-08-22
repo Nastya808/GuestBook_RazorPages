@@ -1,0 +1,51 @@
+﻿@page
+@model GuestBookApp.Pages.GuestBook.IndexModel
+
+<div class="container">
+    <h1 class="display-4 text-center">Гостевая книга</h1>
+
+    @if (HttpContext.Session.GetString("UserName") != null)
+    {
+        <div class="mb-3">
+            <h4>Добро пожаловать, @HttpContext.Session.GetString("UserName")!</h4>
+            <form method="post" asp-page-handler="AddMessage">
+                <div class="form-group">
+                    <label for="newMessage">Ваше сообщение:</label>
+                    <textarea id="newMessage" name="NewMessage" class="form-control" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary mt-2">Добавить сообщение</button>
+            </form>
+            <form method="post" asp-page-handler="Logout" class="mt-2">
+                <button type="submit" class="btn btn-secondary">Выход</button>
+            </form>
+        </div>
+    }
+    else
+    {
+        <div class="mb-3">
+            <p>Пожалуйста, <a asp-page="/GuestBook/Login">войдите</a> или <a asp-page="/GuestBook/Registration">зарегистрируйтесь</a>, чтобы оставить сообщение.</p>
+        </div>
+    }
+
+    <hr />
+
+    <h4>Сообщения:</h4>
+
+    @if (Model.Messages.Any())
+    {
+        foreach (var message in Model.Messages)
+        {
+            <div class="card my-3">
+                <div class="card-body">
+                    <h5 class="card-title">@message.User.Name</h5>
+                    <p class="card-text">@message.MessageText</p>
+                    <p class="card-text"><small class="text-muted">@message.MessageDate.ToString("g")</small></p>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <p>Пока сообщений нет. Будьте первым!</p>
+    }
+</div>

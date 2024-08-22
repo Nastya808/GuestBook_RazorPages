@@ -1,0 +1,39 @@
+﻿@page
+@model GuestBookApp.Pages.GuestBook.RegistrationModel
+@{
+    ViewData["Title"] = "Регистрация";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center">Регистрация</h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post">
+                        <div class="mb-3">
+                            <label for="LoginName" class="form-label">Логин</label>
+                            <input asp-for="LoginName" class="form-control" id="LoginName" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="Password" class="form-label">Пароль</label>
+                            <input asp-for="Password" type="password" class="form-control" id="Password" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="ConfirmPassword" class="form-label">Подтвердите пароль</label>
+                            <input asp-for="ConfirmPassword" type="password" class="form-control" id="ConfirmPassword" />
+                        </div>
+                        <button type="submit" class="btn btn-success">Регистрация</button>
+                    </form>
+                    @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+                    {
+                        <div class="alert alert-danger mt-3">
+                            @ViewBag.ErrorMessage
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
