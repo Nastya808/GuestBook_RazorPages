@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MNd4nqyQweo8lg1vmtWNP7iHxa0CxpkQfztaae/GYMI70GjaYujOG1ila3Npk2UHLySXUaP/wK84wr/t7r3H0Q==",
+  "dgSpecHash": "zxV3GBn9ROEoqaUmIl9qHrVqUr7OAg05fLKSRg9q/BRLmmYVLTk/i51qjUEtieMnOLwRmgr7Odx+Q6G+T04EIQ==",
   "success": true,
-  "projectFilePath": "/Users/nastyaergenova/Projects/GuestBook/GuestBook/GuestBook.csproj",
+  "projectFilePath": "/Users/nastyaergenova/Documents/GitHub/GuestBook_RazorPages/GuestBook/GuestBook.csproj",
   "expectedPackageFiles": [
     "/Users/nastyaergenova/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
     "/Users/nastyaergenova/.nuget/packages/microsoft.data.sqlclient/2.1.7/microsoft.data.sqlclient.2.1.7.nupkg.sha512",
